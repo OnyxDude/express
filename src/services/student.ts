@@ -1,5 +1,6 @@
-import { findAllUsers } from "../models/user";
+import { findAllStudents } from "../models/student";
 
+// Obtener todos los alumnos
 export const findAll = async () => {
-  return await findAllUsers();
+  return await findAllStudents();
 };
