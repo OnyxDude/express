@@ -1,5 +1,5 @@
-import mysql from "mysql12/promise";
-import { ConnectionOptions } from "mysql12";
+import mysql from "mysql2/promise";
+import { ConnectionOptions } from "mysql2";
 import dotenv from "dotenv";
 
 dotenv.config();
