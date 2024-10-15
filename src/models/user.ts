@@ -1,5 +1,5 @@
 import pool from "../db";
-import { ResultSetHeader, RowDataPacket } from "mysql2/promise";
+import { RowDataPacket } from "mysql2/promise";
 
 export interface Student {
   id?: number;
