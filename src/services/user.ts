@@ -1,5 +1,5 @@
-import { findAllUsers } from '../models/user';
+import { findAllUsers } from "../models/user";
 
 export const findAll = async () => {
-    return await findAllUsers();
-}
+  return await findAllUsers();
+};
