@@ -31,14 +31,14 @@ export const insertStudent = async (student: Student): Promise<Student> => {
       phone,
       gender,
       grade_level,
-    ]
+    ],
   );
   const { insertId } = result;
   return { id: insertId, ...student };
 };
 export const updateStudent = async (
   id: number,
-  student: Student
+  student: Student,
 ): Promise<Student> => {
   const {
     first_name,
@@ -71,7 +71,7 @@ export const updateStudent = async (
       gender,
       grade_level,
       id,
-    ]
+    ],
   );
 
   return { id, ...student };
