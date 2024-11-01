@@ -6,11 +6,14 @@ import {
   deleteStudent,
 } from "../controllers/student";
 
+import validate from "../middlewares/validate";
+import { studentSchema } from "../schemas/student";
+
 const router = Router();
 
 router.get("/", getStudents);
-router.post("/", createStudent);
-router.delete("/:id", deleteStudent);
+router.post("/", validate(studentSchema), createStudent);
+router.delete("/:id", validate(studentSchema), deleteStudent);
 
 router.put("/:id", updateStudent);
 

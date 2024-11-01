@@ -10,3 +10,11 @@ export interface Student {
   gender: "M" | "F" | "Otro";
   grade_level: string;
 }
+
+export interface paginatedStudent {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+  data: Student[];
+}
