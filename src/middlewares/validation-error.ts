@@ -5,7 +5,7 @@ const validationError = (
   err: Error,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   if (err instanceof ZodError) {
     // Si el error es de Zod, formatea y envía una respuesta de error de validación

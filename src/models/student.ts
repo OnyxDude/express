@@ -5,14 +5,14 @@ import { Student, paginatedStudent } from "../interfaces/student";
 // Obtener todos los alumnos
 export const findAllStudents = async (
   limit: number,
-  offset: number
+  offset: number,
 ): Promise<paginatedStudent> => {
   const [rows] = await pool.query<RowDataPacket[]>(
     "SELECT * FROM students LIMIT ? OFFSET ?",
-    [limit, offset]
+    [limit, offset],
   );
   const [totalRows] = (await pool.query(
-    "SELECT COUNT(*) as count FROM students"
+    "SELECT COUNT(*) as count FROM students",
   )) as [{ count: number }[], unknown];
   const total = totalRows[0].count;
 
@@ -51,7 +51,7 @@ export const insertStudent = async (student: Student): Promise<Student> => {
       phone,
       gender,
       grade_level,
-    ]
+    ],
   );
   const { insertId } = result;
   return { id: insertId, ...student };
@@ -59,7 +59,7 @@ export const insertStudent = async (student: Student): Promise<Student> => {
 
 export const updateStudent = async (
   id: number,
-  student: Student
+  student: Student,
 ): Promise<Student> => {
   const {
     first_name,
@@ -92,7 +92,7 @@ export const updateStudent = async (
       gender,
       grade_level,
       id,
-    ]
+    ],
   );
 
   return { id, ...student };
