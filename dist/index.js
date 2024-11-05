@@ -10,8 +10,11 @@ const unknown_resource_1 = __importDefault(require("./middlewares/unknown-resour
 const unknown_error_1 = __importDefault(require("./middlewares/unknown-error"));
 const test_1 = __importDefault(require("./routes/test"));
 const validation_error_1 = __importDefault(require("./middlewares/validation-error"));
+//xd
 //Para poder acceder a las variables del ambiente (.env)
-dotenv_flow_1.default.config();
+if (process.env.NODE_ENV !== "production") {
+    dotenv_flow_1.default.config();
+}
 const app = (0, express_1.default)();
 // Middleware para parsear JSON
 app.use(express_1.default.json());

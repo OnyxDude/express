@@ -5,7 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const promise_1 = __importDefault(require("mysql2/promise"));
 const dotenv_flow_1 = __importDefault(require("dotenv-flow"));
-dotenv_flow_1.default.config();
+if (process.env.NODE_ENV !== "production") {
+    dotenv_flow_1.default.config();
+}
 const configOptions = {
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USERNAME,
