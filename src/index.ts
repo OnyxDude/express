@@ -6,10 +6,10 @@ import unknownResource from "./middlewares/unknown-resource";
 import unknownError from "./middlewares/unknown-error";
 import testRoutes from "./routes/test";
 import validationError from "./middlewares/validation-error";
-
+//xd
 //Para poder acceder a las variables del ambiente (.env)
 if (process.env.NODE_ENV !== "production") {
-    dotenvFlow.config();
+  dotenvFlow.config();
 }
 
 const app = express();
