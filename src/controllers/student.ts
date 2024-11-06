@@ -19,7 +19,7 @@ export const getStudents = async (req: Request, res: Response) => {
 
 export const createStudent = async (req: Request, res: Response) => {
   try {
-    const student: Student = req.body
+    const student: Student = req.body;
     const newStudent = await insert(student);
 
     const io = req.app.get("io");
