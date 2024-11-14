@@ -49,7 +49,7 @@ export const updateCourse = async (
      SET course_name = ?, 
          credits = ?, 
          description = ?, 
-         teacher_id = ?, 
+         teacher_id = ?
      WHERE id = ?;`,
     [course_name, credits, description, teacher_id, id],
   );
