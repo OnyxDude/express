@@ -33,7 +33,7 @@ export const insertProfessor = async (
 ): Promise<Professor> => {
   const { first_name, last_name, department, email, phone } = professor;
   const [result] = await pool.query<ResultSetHeader>(
-    `INSERT INTO teachers (first_name, last_name, departments, email, phone) 
+    `INSERT INTO teachers (first_name, last_name, department, email, phone) 
      VALUES (?, ?, ?, ?, ?)`,
     [first_name, last_name, department, email, phone],
   );
@@ -50,7 +50,7 @@ export const updateProfessor = async (
     `UPDATE teachers
      SET first_name = ?, 
          last_name = ?, 
-         departments = ?, 
+         department= ?, 
          email = ?, 
          phone = ?, 
      WHERE id = ?;`,
