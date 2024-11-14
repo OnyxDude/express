@@ -13,8 +13,7 @@ const router = Router();
 
 router.get("/", getStudents);
 router.post("/", validate(studentSchema), createStudent);
-router.delete("/:id", validate(studentSchema), deleteStudent);
-
-router.put("/:id", updateStudent);
+router.put("/:id",validate(studentSchema), updateStudent);
+router.delete("/:id", deleteStudent);
 
 export default router;

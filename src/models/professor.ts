@@ -52,7 +52,7 @@ export const updateProfessor = async (
          last_name = ?, 
          department= ?, 
          email = ?, 
-         phone = ?, 
+         phone = ?
      WHERE id = ?;`,
     [first_name, last_name, department, email, phone, id],
   );

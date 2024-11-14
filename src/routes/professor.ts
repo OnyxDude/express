@@ -13,8 +13,7 @@ const router = Router();
 
 router.get("/", getProfessors);
 router.post("/", validate(professorSchema), createProfessor);
-router.delete("/:id", validate(professorSchema), deleteProfessor);
-
-router.put("/:id", updateProfessor);
+router.put("/:id", validate(professorSchema), updateProfessor);
+router.delete("/:id", deleteProfessor);
 
 export default router;
